@@ -1,5 +1,4 @@
 const express = require('express');
-const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const blogRoutes = require('./routes/blogRoutes');
@@ -12,12 +11,7 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors()); 
-app.use(cors({
-  origin: 'http://127.0.0.1:5173',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-}));
+
 // Enable CORS
 app.use(express.json()); // Parse incoming JSON requests
 
