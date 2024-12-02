@@ -19,7 +19,7 @@ app.use(cors());
 
 // Or enable CORS for specific origins (e.g., from your frontend URL)
 app.use(cors({
-  origin: 'http://127.0.0.1:5173', // Replace with your frontend URL
+  origin: 'https://diwashbhatta.netlify.app', // Replace with your frontend URL
 }));
 app.use(express.json()); // Parse incoming JSON requests
 
