@@ -12,14 +12,21 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors()); // Enable CORS
+app.use(cors()); 
+app.use(cors({
+  origin: 'http://127.0.0.1:5173',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+// Enable CORS
 app.use(express.json()); // Parse incoming JSON requests
 
 // Routes
 app.use('/api', blogRoutes);
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
